@@ -10,3 +10,7 @@ env/
 !.env.example
 *.log
 .DS_Store
+purgatory/
+
+# lokalny klon analizowanego repo (nie komitujemy/pushujemy go do repo roboczego)
+civil42pwa-public/
