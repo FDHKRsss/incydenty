@@ -13,6 +13,7 @@ Dostarczyć samodzielny dokument Markdown, który na podstawie statycznej analiz
 3. **Brak dokumentu z burzy mózgów traktujemy jawnie.** Nie fabrykujemy treści pomysłu. Porównanie opiera się na oznaczonym modelu roboczym, a w sekcji 2.1/9 udokumentowano, że po dostarczeniu dokumentu należy zaktualizować porównanie. To decyzja o uczciwości badawczej, a nie przeoczenie.
 4. **PoC/MVP/beta zdefiniowane jako pionowe plastry.** PoC = minimalna ścieżka „przechwycenie → wysyłka → zapis" dla jednego testera; MVP = użyteczne dla małej grupy (odczyt, auth, offline, RODO); beta = stabilna i skalowalna wersja produkcyjna (role, cykl życia, bezpieczeństwo, niezawodność). Wszystkie progi opisane w dokumencie analizy.
 5. **Nie piszemy kodu.** Gapsy opisujemy prozą/punktami z odwołaniami do plików; nie generujemy patchy ani implementacji.
+6. **Weryfikacja jest zautomatyzowana i groundingująca.** `tests/test_analysis.py` (uruchamiany przez `python -m unittest tests.test_analysis`) nie testuje działania aplikacji, lecz sprawdza, że każde istotne twierdzenie analizy o kodzie jest zgodne z faktyczną zawartością klonu (`civil42pwa-public/`): stan gita (commit `429f9bc`, czysty klon, brak README), potrójny bug `persist()`, zachowania endpointu `/report`, helpery, frontend i konfiguracja. 32 testy, wszystkie zielone. To „testy zielone" w rozumieniu tego projektu research/analiza.
 
 ## Dyspozycja uwag krytyka
 
@@ -31,4 +32,7 @@ Dostarczyć samodzielny dokument Markdown, który na podstawie statycznej analiz
 - `docs/ANALYSIS.md` — główny deliverable (wyniki analizy).
 - `docs/PLAN.md` — cel, milestones (stub/real), adnotacje o uwagach krytyka.
 - `docs/ARCHITECTURE.md` — ten plik (decyzje i dyspozycje).
+- `docs/CONTEXT.md` — trwałe, nieprzekraczalne dyrektywy (esencja, bez powtórzenia całego celu).
+- `docs/lessons/known-issues.md` — wnioski z pułapek (m.in. pełna ścieżka `INSERT`: placeholder vs bindy vs użyte pola).
+- `tests/test_analysis.py` — zautomatyzowany test groundingujący (32 testy).
 - `civil42pwa-public/` — klon analizowanego repo (tylko do odczytu).

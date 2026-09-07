@@ -19,7 +19,7 @@ Dokument z burzy mózgów **nie jest obecny** w repozytorium roboczym (README to
 
 ## Deliverable
 
-Główny, samodzielny dokument: **`docs/ANALYSIS.md`** (kompletna analiza). Pliki pomocnicze: `docs/PLAN.md` (ten plik), `docs/ARCHITECTURE.md` (decyzje projektowe).
+Główny, samodzielny dokument: **`docs/ANALYSIS.md`** (kompletna analiza). Pliki pomocnicze: `docs/PLAN.md` (ten plik), `docs/ARCHITECTURE.md` (decyzje projektowe). Weryfikację groundingującą realizuje zautomatyzowany test **`tests/test_analysis.py`** (32 testy), uruchamiany przez `python -m unittest tests.test_analysis`.
 
 ## Milestones
 
@@ -29,6 +29,7 @@ Główny, samodzielny dokument: **`docs/ANALYSIS.md`** (kompletna analiza). Plik
 - [x] M2 — real: sprawdzić, że każde ryzyko ma odwołanie do pliku, a źródła są faktycznie użyte.
 - [x] M3 — stub: napisać `docs/PLAN.md` i `docs/ARCHITECTURE.md` spójne z celem.
 - [x] M3 — real: uzgodnić dokumenty z finalnym `ANALYSIS.md` (brak dryfu).
+- [x] M4 — real: dodać zautomatyzowany test groundingujący (`tests/test_analysis.py`, 32 testy, wszystkie zielone) — sprawdza, że każde istotne twierdzenie analizy o kodzie jest prawdziwe względem plików w `civil42pwa-public/` (stan klonu, bug `persist()`, endpoint `/report`, helpery, frontend, konfiguracja).
 
 ## Jak zaadresowano uwagi krytyka (blokada)
 
